@@ -1,5 +1,18 @@
 <?php
+<<<<<<< HEAD
 include ('db.php');
+=======
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="company";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error){
+    die("Connection failed: ".$conn->connect_error);
+}
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
 
 $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
@@ -14,6 +27,7 @@ $addressZip = $_POST["addressZip"];
 $phone = $_POST["phone"];
 $directorName = $_POST["directorName"];
 
+<<<<<<< HEAD
 // $sql = "INSERT INTO employees (first_name, last_name, email, password, salary, address_country, address_state, address_street, address_zip, phone, director_name) VALUES ('$firstName', '$lastName', '$emailAddress', '$password', '$salary', '$addressCountry', '$addressState', '$addressStreet', '$addressZip', '$phone', '$directorName')";
 
 // if($conn->query($sql) === TRUE){
@@ -40,4 +54,15 @@ if ($conn->query($sqlAddress)===True){
 
 $conn->close();
 
+=======
+$sql = "INSERT INTO employees (first_name, last_name, email, password, salary, address_country, address_state, address_street, address_zip, phone, director_name) VALUES ('$firstName', '$lastName', '$emailAddress', '$password', '$salary', '$addressCountry', '$addressState', '$addressStreet', '$addressZip', '$phone', '$directorName')";
+
+if($conn->query($sql) === TRUE){
+    echo "New record created successfully";
+}else{
+    echo "Error: ".$sql."<br>".$conn->error;
+}
+
+$conn->close();
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
 ?>

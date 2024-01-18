@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>Employee Account Form</Form></title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<<<<<<< HEAD
     <script src="mail&pass_validation.js"></script>
+=======
+    <script src="mail&pass.js"></script>
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
 </head>
 <body>
     <h2>Employee Account Form</h2>
@@ -60,7 +64,11 @@
             <legend>Contact Information</legend>
                 <p>
                     <label for="phone">Phone No:</label>
+<<<<<<< HEAD
                     <input type="tel" name="phone" id="phone">
+=======
+                    <input type="tel" name="phone">
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
                 </p>
 
         </fieldset>

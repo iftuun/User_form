@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include ('db.php');
 
 $EmployeeSql = "SELECT 
@@ -15,6 +16,21 @@ $EmployeeSql = "SELECT
             a.address_zip 
         FROM employees e JOIN e_address a ON e.address_id = a.address_id";
 $result = $conn->query($EmployeeSql);
+=======
+$servername="localhost";
+$username="";
+$password="";
+$dbname="company";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error){
+    die("Connection failed: ".$conn->connect_error);
+}
+
+$sql = "SELECT first_name, last_name, email, password, salary, address_country, address_state, address_street, address_zip, phone, director_name FROM employees";
+$result = $conn->query($sql);
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
 
 if($result->num_rows > 0){
     echo "<h2>Employee list</h2>";
@@ -23,9 +39,15 @@ if($result->num_rows > 0){
             <th>Name</th>
             <th>Email Address</th>
             <th>Salary</th>
+<<<<<<< HEAD
             <th>Phone</th>
             <th>Director Name</th>
             <th>Full Address</th>
+=======
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Director Name</th>
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
         </tr>";
 
     while($row = $result->fetch_assoc()){
@@ -36,9 +58,15 @@ if($result->num_rows > 0){
             <td>".$fullName."</td>
             <td>".$emailAddress."</td>
             <td>".$row["salary"]."</td>
+<<<<<<< HEAD
             <td>".$row["phone"]."</td>
             <td>".$row["director_name"]."</td>
             <td>".$address."</td>
+=======
+            <td>".$address."</td>
+            <td>".$row["phone"]."</td>
+            <td>".$row["director_name"]."</td>
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
         </tr>";
 
     }
@@ -47,6 +75,7 @@ if($result->num_rows > 0){
     echo "0 results";
 }
 
+<<<<<<< HEAD
 $adderssSql = "SELECT address_country, address_state, address_street, address_zip FROM e_address";
 $result = $conn->query($adderssSql);
 
@@ -72,5 +101,7 @@ if ($result->num_rows > 0){
     }
 }
 
+=======
+>>>>>>> 4e6cd55ebe764b9ac06f3db78d1141b8a520004f
 $conn->close();
 ?>
